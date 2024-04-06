@@ -14,6 +14,7 @@ const PhoneMask = ({ onChange, placeholder, error }) => {
 				ref={inputRef}
 				onChange={onChange}
 				placeholder={placeholder}
+				type='numeric'
 			/>
 			<EmptyNumber />
 		</UserNumberWrapper>
