@@ -59,7 +59,7 @@ export const NavbarListItem = styled.li`
 export const ServicesWrapper = styled.ul`
 	list-style-type: none;
 	position: absolute;
-	top: 32px;
+	top:35px;
 	left: 0;
 	right: 0;
 	background-color: #fff;

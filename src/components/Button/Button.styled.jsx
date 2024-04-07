@@ -15,7 +15,7 @@ export const CustomButton = styled.button`
 	line-height: ${({ $lh }) => $lh || '100%'};
 	letter-spacing: ${({ $ls }) => $ls || 'normal'};
 	transition: color 0.3s ease;
-	transition: background-color 0.3s ease;
+	transition: all 0.3s ease;
 
 	&:hover {
 		background-color: ${({ $hbg, $bg }) => $hbg || $bg};

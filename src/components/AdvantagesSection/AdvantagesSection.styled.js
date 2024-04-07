@@ -22,7 +22,7 @@ export const AdvantagesList = styled.div`
 	flex-wrap: wrap;
 	margin: 0 auto 80px;
 
-	@media (max-width: 1015px) {
+	@media (max-width: 1345px) {
 		margin: 0 auto 70px;
 	}
 `

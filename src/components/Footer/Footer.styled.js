@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { FontFamaly } from '../../GlobalStyles/GlobalStyles.styled'
 
-export const FooterLink = styled(Link)``
-
 export const FooterNav = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -100,7 +98,6 @@ export const FooterContacts = styled.div`
 
 	& > a {
 		display: inline-block;
-		padding-top: 15px;
 		font-family: ${FontFamaly.secondFamily};
 		border-bottom: 1px solid rgba(147, 116, 98, 0.5);
 		font-weight: 600;
@@ -109,6 +106,7 @@ export const FooterContacts = styled.div`
 		color: #937462;
 		transition: all 0.3s ease;
 		display: none;
+		height: 16px;
 	}
 
 	a:hover {
@@ -136,7 +134,7 @@ export const FooterSocialLinks = styled.div`
 
 export const PrivacyPolicy = styled(Link)`
 	display: inline-block;
-	padding: 15px 0 30px;
+	margin: 15px 0 30px;
 	font-family: ${FontFamaly.secondFamily};
 	border-bottom: 1px solid rgba(147, 116, 98, 0.5);
 	font-weight: 600;
@@ -144,6 +142,7 @@ export const PrivacyPolicy = styled(Link)`
 	line-height: 100%;
 	color: #937462;
 	transition: all 0.3s ease;
+	height: 16px;
 
 	&:hover {
 		border: none;

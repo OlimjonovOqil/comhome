@@ -18,6 +18,20 @@ const Footer = () => {
 		isOpen: false,
 	})
 
+	const handleSelectService = id => {
+		setSelectedService(prev => ({
+			id: id,
+			isOpen: id === selectedService.id ? !prev.isOpen : true,
+		}))
+	}
+
+	const isSelectedServiceOpen = id => {
+		if (selectedService.id === id && id < 4 && selectedService.isOpen) {
+			return true
+		}
+		return false
+	}
+
 	return (
 		<Container>
 			<S.FooterNav>
@@ -26,17 +40,9 @@ const Footer = () => {
 						<div key={header.id}>
 							<S.FooterLinksHeaders
 								onClick={() => {
-									setSelectedService(prev => ({
-										id: header.id,
-										isOpen:
-											header.id === selectedService.id ? !prev.isOpen : true,
-									}))
+									handleSelectService(header.id)
 								}}
-								$isOpen={
-									selectedService.id === header.id &&
-									header.id < 4 &&
-									selectedService.isOpen
-								}
+								$isOpen={isSelectedServiceOpen(header.id)}
 							>
 								<S.FooterLinksTitle $isLink={header.id > 3}>
 									{header.id > 3 ? (
@@ -46,8 +52,7 @@ const Footer = () => {
 									)}
 									{header.id < 4 && (
 										<>
-											{selectedService.id === header.id &&
-											selectedService.isOpen ? (
+											{isSelectedServiceOpen(header.id) ? (
 												<FooterServicesOpenVector />
 											) : (
 												<NavbarVector />
@@ -56,13 +61,7 @@ const Footer = () => {
 									)}
 								</S.FooterLinksTitle>
 							</S.FooterLinksHeaders>
-							<S.FooterServicesList
-								$isOpen={
-									selectedService.id === header.id &&
-									header.id < 4 &&
-									selectedService.isOpen
-								}
-							>
+							<S.FooterServicesList $isOpen={isSelectedServiceOpen(header.id)}>
 								{header?.details?.map(link => (
 									<S.FooterServicesItem key={link.id}>
 										<Link to={'/'}>{link.title}</Link>
